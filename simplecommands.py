@@ -1,6 +1,5 @@
 from discord.ext import commands
 import discord
-import timeZone
 import stageinfo
 
 def setup(bot):
@@ -11,14 +10,6 @@ def setup(bot):
     @bot.command()
     async def jay(ctx):
         await ctx.send("He loves feeding")
-
-    @bot.command()
-    async def Japan(ctx):
-        await ctx.send(timeZone.jp)
-
-    @bot.command()
-    async def est(ctx):
-        await ctx.send(timeZone.easternst)
 
     @bot.command()
     async def turf(ctx):

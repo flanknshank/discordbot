@@ -1,6 +1,7 @@
 import settings
 import discord
 import simplecommands
+import timezone
 from discord.ext import commands
 
 
@@ -13,6 +14,8 @@ def run():
         print(bot.user)
         print(bot.user.id)
     simplecommands.setup(bot)
+    timezone.setup(bot)
+
 
 
     bot.run(settings.DISCORD_API_SECRET)

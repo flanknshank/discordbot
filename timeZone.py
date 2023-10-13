@@ -1,18 +1,16 @@
-import requests
-import json
+from discord.ext import commands
+import timecalc
 
-def getTime(url):
-    response = requests.get(url)
-    response_json = json.loads(response.text)['time']
-    time = int(response_json.split(':')[0])
-    if(time > 12):
-        time = time - 12
-        response_json = str(time) + response_json[2:] + "PM"
-    else:
-        if(response_json[0] == '0'):
-            response_json = response_json[1:]
-        response_json = response_json + "AM"
-    return response_json
+def setup(bot):
+    #basic command, looks for the word link and return send()
+    @bot.command()
+    async def Japan(ctx):
+        await ctx.send(timecalc.jp)
 
-jp = getTime('https://timeapi.io/api/Time/current/zone?timeZone=Japan')
-easternst = getTime('https://timeapi.io/api/Time/current/zone?timeZone=America/Detroit')
+    @bot.command()
+    async def est(ctx):
+        await ctx.send(timecalc.easternst)
+
+    @bot.command()
+    async def pst(ctx):
+        await ctx.send(timecalc.pst)
