@@ -1,7 +1,6 @@
 import json
 import requests
 from datetime import datetime
-import pytz
 from dateutil import tz
 
 
@@ -33,4 +32,3 @@ def get_turf():
     all = f"Stages are {stage1} and {stage2} and the timeframe is {time} \n {image1} {image2}"
     return all
 
-print(get_turf())
