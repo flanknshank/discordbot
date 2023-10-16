@@ -41,5 +41,17 @@ def get_anarchyOpen():
     startTime = anarchy['startTime']
     endTime = anarchy['endTime']
     time = time_frame(startTime, endTime)
-    all = f"Anarchy open stages are {stage1} and {stage2} and the timeframe is {time} \n {image1} {image2}"
+    all = f"Open stages are {stage1} and {stage2} and the timeframe is {time} \n {image1} {image2}"
+    return all
+
+def get_anarchySeries():
+    anarchy = json.loads(response.text)['data']['bankaraSchedules']['nodes'][0]
+    stage1 = anarchy['bankaraMatchSettings'][1]['vsStages'][0]['name']
+    image1 = anarchy['bankaraMatchSettings'][1]['vsStages'][0]['image']['url']
+    stage2 = anarchy['bankaraMatchSettings'][1]['vsStages'][1]['name']
+    image2 = anarchy['bankaraMatchSettings'][1]['vsStages'][1]['image']['url']
+    startTime = anarchy['startTime']
+    endTime = anarchy['endTime']
+    time = time_frame(startTime, endTime)
+    all = f"Series stages are {stage1} and {stage2} and the timeframe is {time} \n {image1} {image2}"
     return all
