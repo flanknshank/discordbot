@@ -2,6 +2,7 @@ from discord.ext import commands
 import discord
 import stageinfo
 
+
 def setup(bot):
     @bot.command()
     async def link(ctx):
@@ -25,8 +26,8 @@ def setup(bot):
 
     @bot.command()
     async def image(ctx):
-        with open('wiper.png', 'rb') as fp:
-            await ctx.send(file=discord.File(fp, 'new_filename.png'))
+        await ctx.send(file=discord.File('wiper.png'))
+
 
     @bot.command()
     async def embed(ctx):
