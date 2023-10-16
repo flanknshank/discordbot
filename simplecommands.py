@@ -16,6 +16,14 @@ def setup(bot):
         await ctx.send(stageinfo.get_turf())
 
     @bot.command()
+    async def open(ctx):
+        await ctx.send(stageinfo.get_anarchyOpen())
+
+    @bot.command()
+    async def series(ctx):
+        await ctx.send(stageinfo.get_anarchySeries())
+
+    @bot.command()
     async def image(ctx):
         with open('wiper.png', 'rb') as fp:
             await ctx.send(file=discord.File(fp, 'new_filename.png'))
