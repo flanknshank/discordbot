@@ -26,8 +26,8 @@ def setup(bot):
         await ctx.send(stageinfo.get_anarchySeries())
 
     @bot.command()
-    async def image(ctx):
-        image_map = image_manipulation.make_graphic()
+    async def image(ctx, arg1, arg2):
+        image_map = image_manipulation.make_graphic(arg1,arg2)
         await ctx.send(file=discord.File(image_map))
         os.remove('final.png')
 

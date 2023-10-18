@@ -1,0 +1,23 @@
+
+map_mapping = {
+    "Scorch Gorge" : "scorch.png",
+    "Eeltail Alley" : "eltail.png",
+    "Hagglefish Market" : "haggle.png",
+    "Undertow Spillway" : "undertow.png",
+    "Mincemeat Metalworks" : "mincemeat.png",
+    "Hammerhead Bridge" : "hammer.png",
+    "Museum d'Alfonsino" : "museum.png",
+    "Mahi-Mahi Resort" : "mahi.png",
+    "Inkblot Art Academy" : "inkblot.png",
+    "Sturgeon Shipyard" : "sturgeon.png",
+    "MakoMart" : "mako.png",
+    "Wahoo World" : "wahoo.png",
+    "Brinewater Springs" : "brinewater.png",
+    "Flounder Heights" : "flounder.png",
+    "Um'ami Ruins" : "Ummai.png",
+    "Manta Maria" : "manta.png",
+    "Barnacle & Dime" : "barnacle.png",
+    "Humpback Pump Track" : "humpback.png",
+    "Crableg Capital" : "crableg.png",
+    "Shipshape Cargo Co." : "shipeshape.png",
+}
