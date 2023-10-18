@@ -1,7 +1,8 @@
 from discord.ext import commands
 import discord
 import stageinfo
-
+import image_manipulation
+import os
 
 def setup(bot):
     @bot.command()
@@ -26,8 +27,9 @@ def setup(bot):
 
     @bot.command()
     async def image(ctx):
-        await ctx.send(file=discord.File('wiper.png'))
-
+        image_map = image_manipulation.make_graphic()
+        await ctx.send(file=discord.File(image_map))
+        os.remove('final.png')
 
     @bot.command()
     async def embed(ctx):
