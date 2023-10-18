@@ -12,15 +12,19 @@ def make_graphic(Map1, Map2, mode, rotation_time):
   resized_map1 = map1.resize((new_width, new_height))
   resized_map2 = map2.resize((new_width, new_height))
 
-  background.paste(resized_map1, (0,665), mask = resized_map1)
-  background.paste(resized_map2, (0,320), mask = resized_map2)
+  background.paste(resized_map1, (0,665))
+  background.paste(resized_map2, (0,320))
 
   draw = ImageDraw.Draw(background)
   text = mode
   font_size = 100
   myFont = ImageFont.truetype('Splatoon1.ttf', 60)
-  text_color = (144, 238, 144)  
-  position = (130,40)
+  if(mode == "Turf war"):
+    text_color = (144, 238, 144)  
+    position = (130,40)
+  else:
+    text_color = (204, 85, 0) 
+    position = (60,40)
   draw.text(position, text, fill=text_color, font=myFont)
   #//
   draw = ImageDraw.Draw(background)

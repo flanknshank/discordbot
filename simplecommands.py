@@ -6,30 +6,34 @@ import os
 
 def setup(bot):
     @bot.command()
-    async def link(ctx):
-        await ctx.send("I love bullying Koroks")
-
-    @bot.command()
-    async def jay(ctx):
-        await ctx.send("He loves feeding")
+    async def riki(ctx):
+        await ctx.send("squeeze")
 
     @bot.command()
     async def turf(ctx):
-        await ctx.send(stageinfo.get_turf())
+        rotation = stageinfo.rotation_info()
+        rotation.get_turf()
+        image_map = image_manipulation.make_graphic(rotation.stage1,rotation.stage2,rotation.mode,rotation.time)
+        await ctx.send(file=discord.File(image_map))
+        os.remove('final.png')
+
 
     @bot.command()
     async def open(ctx):
-        await ctx.send(stageinfo.get_anarchyOpen())
+        rotation = stageinfo.rotation_info()
+        rotation.get_anarchyOpen()
+        image_map = image_manipulation.make_graphic(rotation.stage1,rotation.stage2,rotation.mode,rotation.time)
+        await ctx.send(file=discord.File(image_map))
+        os.remove('final.png')
 
     @bot.command()
     async def series(ctx):
-        await ctx.send(stageinfo.get_anarchySeries())
-
-    @bot.command()
-    async def image(ctx, arg1, arg2):
-        image_map = image_manipulation.make_graphic(arg1,arg2)
+        rotation = stageinfo.rotation_info()
+        rotation.get_anarchySeries()
+        image_map = image_manipulation.make_graphic(rotation.stage1,rotation.stage2,rotation.mode,rotation.time)
         await ctx.send(file=discord.File(image_map))
         os.remove('final.png')
+
 
     @bot.command()
     async def embed(ctx):
