@@ -14,3 +14,15 @@ def setup(bot):
     @bot.command()
     async def pst(ctx):
         await ctx.send(timecalc.pst)
+    
+    @bot.command()
+    async def mst(ctx):
+        await ctx.send(timecalc.mst)
+
+    @bot.command()
+    async def cst(ctx):
+        await ctx.send(timecalc.cst)
+
+    @bot.command()
+    async def cest(ctx):
+        await ctx.send(timecalc.cest)
