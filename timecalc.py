@@ -15,4 +15,9 @@ def getTime(url):
     return response_json
 
 jp = getTime('https://timeapi.io/api/Time/current/zone?timeZone=Japan')
+pst = getTime('https://timeapi.io/api/Time/current/zone?timeZone=America/Los_Angeles')
+mst = getTime('https://timeapi.io/api/Time/current/zone?timeZone=America/Boise')
+cst = getTime('https://timeapi.io/api/Time/current/zone?timeZone=America/North_Dakota/Center')
 easternst = getTime('https://timeapi.io/api/Time/current/zone?timeZone=America/Detroit')
+cest = getTime('https://timeapi.io/api/TimeZone/zone?timeZone=Europe/Amsterdam')
+gmt = getTime('https://timeapi.io/api/TimeZone/zone?timeZone=Europe/London')
