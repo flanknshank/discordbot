@@ -8,6 +8,8 @@ def setup(bot):
     @bot.command()
     async def riki(ctx):
         await ctx.send("squeeze")
+
+    @bot.command()
     async def testing(ctx):
         await ctx.send("testing")
 

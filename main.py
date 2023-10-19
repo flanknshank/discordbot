@@ -4,6 +4,7 @@ import simplecommands
 import timezone
 from discord.ext import commands
 
+logger = settings.logging.getLogger("bot")
 
 def run():
     intents = discord.Intents.default()
@@ -11,14 +12,12 @@ def run():
     bot = commands.Bot(command_prefix="!", intents=intents)
     @bot.event
     async def on_ready():
-        print(bot.user)
-        print(bot.user.id)
+        logger.info(f"User: {bot.user} (ID: {bot.user.id})")
     simplecommands.setup(bot)
     timezone.setup(bot)
+    
 
-
-
-    bot.run(settings.DISCORD_API_SECRET)
+    bot.run(settings.DISCORD_API_SECRET, root_logger=True)
 
 if __name__ == "__main__":
     run()
