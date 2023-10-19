@@ -26,9 +26,7 @@ class rotation_info:
     def get_turf(cls):
         turf = json.loads(cls.response.text)['data']['regularSchedules']['nodes'][0]
         stage1 = turf['regularMatchSetting']['vsStages'][0]['name']
-        image1 = turf['regularMatchSetting']['vsStages'][0]['image']['url']
         stage2 = turf['regularMatchSetting']['vsStages'][1]['name']
-        image2 = turf['regularMatchSetting']['vsStages'][1]['image']['url']
         startTime = turf['startTime']
         endTime = turf['endTime']
         cls.time_frame(startTime, endTime)
@@ -40,9 +38,7 @@ class rotation_info:
     def get_anarchyOpen(cls):
         anarchy = json.loads(cls.response.text)['data']['bankaraSchedules']['nodes'][0]
         stage1 = anarchy['bankaraMatchSettings'][0]['vsStages'][0]['name']
-        image1 = anarchy['bankaraMatchSettings'][0]['vsStages'][0]['image']['url']
         stage2 = anarchy['bankaraMatchSettings'][0]['vsStages'][1]['name']
-        image2 = anarchy['bankaraMatchSettings'][0]['vsStages'][1]['image']['url']
         startTime = anarchy['startTime']
         endTime = anarchy['endTime']
         cls.time_frame(startTime, endTime)
@@ -54,9 +50,7 @@ class rotation_info:
     def get_anarchySeries(cls):
         anarchy = json.loads(cls.response.text)['data']['bankaraSchedules']['nodes'][0]
         stage1 = anarchy['bankaraMatchSettings'][1]['vsStages'][0]['name']
-        image1 = anarchy['bankaraMatchSettings'][1]['vsStages'][0]['image']['url']
         stage2 = anarchy['bankaraMatchSettings'][1]['vsStages'][1]['name']
-        image2 = anarchy['bankaraMatchSettings'][1]['vsStages'][1]['image']['url']
         startTime = anarchy['startTime']
         endTime = anarchy['endTime']
         cls.time_frame(startTime, endTime)
