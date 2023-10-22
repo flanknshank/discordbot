@@ -14,4 +14,4 @@ def setup(bot):
     @bot.command()
     async def pst(ctx):
         await ctx.send(timecalc.pst)
-    #mk3 best weapon
+    #mk3 best weaponf adjfk
