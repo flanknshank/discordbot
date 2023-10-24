@@ -10,7 +10,9 @@ logger = settings.logging.getLogger("bot")
 def run():
     intents = discord.Intents.default()
     intents.message_content = True
-    bot = commands.Bot(command_prefix="!", intents=intents)
+    status = discord.Status.dnd
+    activity = discord.Game(name="Being coded by Kiwi and Henlo")
+    bot = commands.Bot(command_prefix="!", intents=intents, activity=activity,status =status)
     @bot.event
     async def on_ready():
         logger.info(f"User: {bot.user} (ID: {bot.user.id})")
@@ -25,7 +27,7 @@ def run():
     simplecommands.setup(bot)
     timeZone.setup(bot)
     
-
+    
     bot.run(settings.DISCORD_API_SECRET, root_logger=True)
 
 if __name__ == "__main__":

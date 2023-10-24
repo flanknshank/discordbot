@@ -1,5 +1,7 @@
 from PIL import Image, ImageDraw, ImageFont
 from maps import matcher
+import requests
+from io import BytesIO
 
 def make_graphic(Map1, Map2, mode, rotation_time):
   background = Image.open('misc/background.png')
@@ -36,4 +38,25 @@ def make_graphic(Map1, Map2, mode, rotation_time):
   draw.text(position, text, fill=text_color, font=myFont)
   background.save("final.png")
   return ("final.png")
+
+
+def resize(img):
+  response = requests.get(img)
+  image = Image.open(BytesIO(response.content))
+  desired_size = (130, 130)
+  image = image.convert('RGBA')
+  image.thumbnail(desired_size)
+  return image
+
+
+
+
+def fight_scene(profile1, profile2):
+  background = Image.open('misc/bg.png').convert('RGBA')
+  profile1 = resize(profile1)
+  profile2 = resize(profile2)
+  background.paste(profile2,(210,50))
+  background.paste(profile1,(-10,50))
+  background.save('fight.png')
+
 
